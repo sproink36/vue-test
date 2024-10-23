@@ -1,0 +1,29 @@
+@import "./variables.scss";
+
+@mixin media-xlarge {
+  @media (min-width: $breakpoint-Xlarge) {
+    @content;
+  }
+}
+
+@mixin media-large {
+  @media (min-width: $breakpoint-large) and (max-width: calc(#{$breakpoint-Xlarge} - 1px)) {
+    @content;
+  }
+}
+
+@mixin media-medium {
+  @media (min-width: $breakpoint-medium) and (max-width: calc(#{$breakpoint-large} - 1px)) {
+    @content;
+  }
+}
+
+@mixin media-small {
+  @media (max-width: calc(#{$breakpoint-medium} - 1px)) {
+    @content;
+  }
+}
+
+// @include media-small {
+//   padding: 10px;
+// }

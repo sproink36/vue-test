@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "Averta_Cyrillic_Regular";
+  src: url("/src/app/styles/fonts/Averta_Cyrillic/Averta Cyrillic Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+@font-face {
+  font-family: "Averta_Cyrillic_SemiBold";
+  src: url("/src/app/styles/fonts/Averta_Cyrillic/Averta Cyrillic SemiBold.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 19.78px;
+}
+
+@font-face {
+  font-family: "Averta_Cyrillic_Light";
+  src: url("/src/app/styles/fonts/Averta_Cyrillic/Averta Cyrillic Light.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24.8px;
+}
+
+@font-face {
+  font-family: "Averta_Cyrillic_Bold";
+  src: url("/src/app/styles/fonts/Averta_Cyrillic/Averta Cyrillic Bold.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 28px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import "./media-queries.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Averta_Cyrillic_Regular", "Open_Sans", sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html,
+body,
+.wrapper {
+  min-height: 100dvh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @include media-xlarge {
+    width: $breakpoint-Xlarge;
+  }
+
+  @include media-large {
+    min-width: $breakpoint-large;
+  }
+
+  @include media-medium {
+    min-width: $breakpoint-medium;
+  }
+
+  @include media-small {
+    min-width: $breakpoint-small;
+  }
+}
