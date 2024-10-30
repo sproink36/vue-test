@@ -1,0 +1,98 @@
+<template>
+  <div class="block" :class="{ 'grow-block': isGrow }">
+    <TitleInput
+      >{{ title }}<span class="square">{{ squareText }}</span></TitleInput
+    >
+    <div class="block-number">
+      <span class="number">{{ firstRange }}</span>
+      <div class="vertical-line"></div>
+      <span class="number">{{ secondRange }}</span>
+
+      <div class="block-range">
+        <!-- <input
+          class="input-range"
+          type="range"
+          :min="minSquare"
+          :max="maxSquare"
+          v-model="firstRange"
+          step="1"
+          @input="updateFirstValue(Number(firstRange), Number(secondRange))"
+        />
+        <input
+          class="input-range"
+          type="range"
+          :min="minSquare"
+          :max="maxSquare"
+          v-model="secondRange"
+          step="1"
+          @input="updateSecondValue(Number(secondRange), Number(firstRange))"
+        /> -->
+      </div>
+    </div>
+  </div>
+</template>
+<script setup lang="ts">
+import { ref } from "vue";
+import { TitleInput } from "..";
+
+const props = defineProps<{
+  title: string;
+  squareText?: string;
+  minSquare?: number;
+  maxSquare?: number;
+  isGrow?: boolean;
+  rangeSquare?: object;
+}>();
+
+const firstRange = ref(props.minSquare);
+const secondRange = ref(props.maxSquare);
+
+function updateFirstValue(currentValue: number, maxValue: number) {
+  if (currentValue >= maxValue) {
+    firstRange.value = maxValue - 1;
+  }
+}
+
+function updateSecondValue(currentValue: number, minValue: number) {
+  if (currentValue <= minValue) {
+    secondRange.value = minValue + 1;
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.blok {
+}
+.grow-block {
+  flex-grow: 1;
+}
+
+.block-range {
+  position: relative;
+  width: 200px;
+}
+
+.input-range {
+  width: 100%;
+  -webkit-appearance: none;
+  width: 100%; /* Ширина ползунка */
+  height: 5px; /* Высота дорожки */
+  background: #ddd; /* Цвет дорожки */
+  border-radius: 5px; /* Закругление дорожки */
+  outline: none; /* Убираем контур при фокусе */
+  z-index: 1;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Убираем стандартный стиль для WebKit */
+    appearance: none; /* Убираем стандартный стиль */
+    width: 20px; /* Ширина ползунка */
+    height: 20px; /* Высота ползунка */
+    border-radius: 50%; /* Закругление ползунка */
+    background: #4caf50; /* Цвет ползунка */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background 0.3s; /* Плавный переход */
+    z-index: 100;
+    transform: translateX(10px);
+  }
+}
+</style>

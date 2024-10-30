@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import CardsPage from '../pages/cards/ui/CardsPage.vue'; 
+import CardsPage from "../pages/cards/ui/CardsPage.vue";
+
 
 </script>
 
