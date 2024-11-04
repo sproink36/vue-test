@@ -6,8 +6,8 @@
         class="list__item"
         v-for="item in listItem"
         :key="item"
-        :class="{ active: currentRoom === item }"
-        @click="$emit('selectRoomines', item)"
+        :class="{ active: roomines === item }"
+        @click="selectRoominess(item)"
       >
         {{ item }}
       </li>
@@ -18,26 +18,32 @@
 <script setup lang="ts">
 import { TitleInput } from "..";
 
+const roomines = defineModel();
+
 defineProps<{
-  currentRoom: string | null;
+  listItem: string[];
 }>();
 
-defineEmits(["selectRoomines"]);
-
-const listItem = ["Ст", "1", "2", "3+"];
+function selectRoominess(selectRoom: string) {
+  if (roomines.value === selectRoom) {
+    roomines.value = null;
+  } else {
+    roomines.value = selectRoom;
+  }
+}
 </script>
 
 <style lang="scss" scoped>
 @use "/src/app/styles/variables" as *;
 
 .block {
-  flex-grow: 1;
+  width: 230px;
 }
 
 .list {
   display: flex;
   align-items: center;
-  width: 230px;
+  width: 100%;
   gap: 10px;
 }
 

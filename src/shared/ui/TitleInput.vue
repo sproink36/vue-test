@@ -1,10 +1,11 @@
 <template>
-  <p class="title" :style="{ color: color }"><slot></slot></p>
+  <p class="title" :style="{ color: color, marginBottom: mb }"><slot></slot></p>
 </template>
 
 <script setup lang="ts">
 defineProps<{
   color?: string;
+  mb?: string;
 }>();
 </script>
 

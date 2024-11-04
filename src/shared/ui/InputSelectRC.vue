@@ -3,21 +3,16 @@
     <TitleInput>Выбрать ЖК</TitleInput>
     <div class="select">
       <div class="option">{{}}</div>
-      <object class="dropDaunIcon" data="/src/shared/ui/icons/dropDaunIcon.svg" type="image/svg+xml">
-        иконка
-      </object>
+      <DropDaunIcon />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { TitleInput } from "..";
+import { DropDaunIcon } from "./icons";
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "/src/app/styles/variables" as *;
-
-.dropDaunIcon {
-    color: red;
-}
 </style>
