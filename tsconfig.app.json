@@ -26,5 +26,5 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "src/shared/ui/DiapasonInput"
-, "src/app/ClickOutsideDirective.ts"  ]
+, "src/app/ClickOutsideDirective.ts" ]
 }
