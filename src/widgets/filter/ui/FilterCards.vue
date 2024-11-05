@@ -13,17 +13,18 @@ import {
   InputBlockDrop,
   RoominessSelect,
 } from "../../../shared";
-import { IAreaSize } from "../../../shared/ui/DiapasonInput.vue";
+import { IDiapasonValue } from "../../../shared/ui/DiapasonInput.vue";
 
 const listRK = ["lorem1", "lorem2", "lorem3", "lorem4"];
 const listRooms = ["Ст", "1", "2", "3+"];
 
 const roomines = ref<null | string>(listRooms[1] ?? null);
 const choiceRK = ref<null | string>(listRK[0] ?? null);
-const areaSize = ref<IAreaSize>({
-  minArea: 17,
-  maxArea: 162,
-  currentArea: {
+const areaSize = ref<IDiapasonValue>({
+  minValue: 17,
+  maxValue: 162,
+  step: 1,
+  currentValues: {
     currentMin: 17,
     currentMax: 162,
   },

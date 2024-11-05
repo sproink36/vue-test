@@ -9,3 +9,39 @@
   line-height: 14px;
   cursor: pointer;
 }
+
+@mixin custom-slider {
+  .custom-slider .bar-left,
+  .custom-slider .bar-inner,
+  .custom-slider .bar-right {
+    padding: 0.5px 0;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: $orangeForsythia-color;
+  }
+
+  .custom-slider .bar-inner {
+    border: 0;
+  }
+
+  .custom-slider .thumb::before {
+    width: 12px;
+    height: 12px;
+    box-shadow: none;
+    border: 2px solid $orangeForsythia-color;
+    background-color: $white-color;
+  }
+
+  .custom-slider .thumb-left {
+    right: 7.5px !important;
+  }
+
+  .custom-slider .thumb-right {
+    left: 7.5px !important;
+  }
+
+  .custom-slider .min-caption,
+  .custom-slider .max-caption {
+    display: none;
+  }
+}

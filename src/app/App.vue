@@ -14,4 +14,9 @@ import CardsPage from "../pages/cards/ui/CardsPage.vue";
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style lang="scss">
+input {
+  all: unset;
+  box-sizing: border-box;
+}
+</style>
