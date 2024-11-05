@@ -149,6 +149,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield; /* Убирает стрелочки в Firefox */
+  appearance: none;
 }
 
 .diapason__line {
