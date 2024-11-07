@@ -1,9 +1,9 @@
 <template>
   <div class="block">
-    <TitleInput>Выбрать ЖК</TitleInput>
+    <TitleInput><slot></slot></TitleInput>
     <div
       class="select"
-      @click.self="isShowList = !isShowList"
+      @click="isShowList = !isShowList"
       v-click-outside="clickOutSide"
     >
       <div class="option">{{ choiceSelected }}</div>
@@ -49,9 +49,9 @@ function clickOutSide() {
 <style lang="scss" scoped>
 @use "/src/app/styles/variables" as *;
 @use "/src/app/styles/mixins/common" as *;
-.block {
-  width: 230px;
-}
+// .block {
+//   width: 230px;
+// }
 
 .select {
   position: relative;
@@ -60,7 +60,7 @@ function clickOutSide() {
   justify-content: space-between;
   width: 100%;
   height: 46px;
-  padding: 0 14px;  
+  padding: 0 14px;
   @include input-defualt;
 }
 

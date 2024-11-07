@@ -77,18 +77,18 @@ body,
   padding: 0 16px;
 
   @include media-xlarge {
-    width: $breakpoint-Xlarge;
+    max-width: $breakpoint-Xlarge;
   }
 
   @include media-large {
-    min-width: $breakpoint-large;
+    max-width: $breakpoint-large;
   }
 
   @include media-medium {
-    min-width: $breakpoint-medium;
+    max-width: $breakpoint-medium;
   }
 
   @include media-small {
-    min-width: $breakpoint-small;
+    max-width: $breakpoint-small;
   }
 }

@@ -1,6 +1,7 @@
-$breakpoint-small: 343px;
-$breakpoint-medium: 736px;
-$breakpoint-large: 992px;
+$padding: 32px;
+$breakpoint-small: 343px + $padding;
+$breakpoint-medium: 736px +$padding;
+$breakpoint-large: 992px + $padding;
 $breakpoint-Xlarge: 1270px;
 
 $white-color: #ffffff;
@@ -25,3 +26,4 @@ $greyMillion-color: #999999;
 // #FFC700
 // #666666
 // #FFC700
+// #263E66

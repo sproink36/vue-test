@@ -1,6 +1,6 @@
 <template>
   <div class="block">
-    <TitleInput>Комнатность</TitleInput>
+    <TitleInput><slot></slot></TitleInput>
     <ul class="list">
       <li
         class="list__item"
@@ -36,9 +36,9 @@ function selectRoominess(selectRoom: string) {
 <style lang="scss" scoped>
 @use "/src/app/styles/variables" as *;
 
-.block {
-  width: 230px;
-}
+// .block {
+//   width: 230px;
+// }
 
 .list {
   display: flex;
@@ -54,7 +54,7 @@ function selectRoominess(selectRoom: string) {
   width: 46px;
   height: 46px;
   border: 1px solid #dedede;
-  border-radius: 100%;
+  border-radius: 50%;
   color: $black-color;
   cursor: pointer;
 

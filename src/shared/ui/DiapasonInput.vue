@@ -1,6 +1,6 @@
 <template>
   <div class="block">
-    <TitleInput>Площадь, м<sup>2</sup></TitleInput>
+    <TitleInput><slot></slot></TitleInput>
     <div class="diapason">
       <div class="diapason__block-input">
         <input
@@ -110,13 +110,9 @@ function applyInputMax() {
     }
   }
 }
-
 </script>
 <style lang="scss" scoped>
 @use "/src/app/styles/mixins/common" as *;
-.block {
-  width: 230px;
-}
 
 .diapason {
   @include input-defualt;

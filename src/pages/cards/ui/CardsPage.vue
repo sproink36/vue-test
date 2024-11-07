@@ -1,18 +1,68 @@
 <template>
-  <div class="cards">
+  <div class="cards-block">
     <div class="line"></div>
     <h1 class="title">Вам подходит 375 вариантов</h1>
-    <FilterCards />
+    <FilterCards
+      :listRK
+      :listRooms
+      :listCase
+      v-model:roomines="roomines"
+      v-model:choice-RK="choiceRK"
+      v-model:area-size="areaSize"
+      v-model:price="price"
+      v-model:choice-case="choiceCase"
+    />
+    <SortCards
+      v-model:active-sort="activeSort"
+      v-model:is-by-price="isByPrice"
+      v-model:is-by-area="isByArea"
+    />
+    <CardsList />
   </div>
 </template>
 <script setup lang="ts">
-import { FilterCards } from "../../../widgets";
+import { ref } from "vue";
+import { CardsList, FilterCards } from "../../../widgets";
+import SortCards from "./SortCards.vue";
+import { IDiapasonValue } from "../../../shared/ui/DiapasonInput.vue";
+
+const listRK = ["lorem1", "lorem2", "lorem3", "lorem4"];
+const listRooms = ["Ст", "1", "2", "3+"];
+const listCase = ["lorem1", "lorem2", "lorem3", "lorem4"];
+
+const roomines = ref<null | string>(listRooms[1] ?? null);
+const choiceRK = ref<null | string>(listRK[0] ?? null);
+const areaSize = ref<IDiapasonValue>({
+  minValue: 17,
+  maxValue: 162,
+  step: 1,
+  currentValues: {
+    currentMin: 17,
+    currentMax: 162,
+  },
+});
+
+const price = ref<IDiapasonValue>({
+  minValue: 2.5,
+  maxValue: 24.5,
+  step: 0.1,
+  currentValues: {
+    currentMin: 2.5,
+    currentMax: 24.5,
+  },
+});
+
+const choiceCase = ref<null | string>(listRK[0] ?? null);
+
+const activeSort = ref("table");
+const isByPrice = ref(true);
+const isByArea = ref(false);
 </script>
 <style lang="scss" scoped>
 @import "/src/app/styles/media-queries.scss";
 @import "/src/app/styles/variables.scss";
 
-.cards {
+.cards-block {
   display: flex;
   flex-direction: column;
 
