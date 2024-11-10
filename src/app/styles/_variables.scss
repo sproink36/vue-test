@@ -1,6 +1,6 @@
 $padding: 32px;
-$breakpoint-small: 343px + $padding;
-$breakpoint-medium: 736px +$padding;
+$breakpoint-small: (343px + $padding);
+$breakpoint-medium: 736px + $padding;
 $breakpoint-large: 992px + $padding;
 $breakpoint-Xlarge: 1270px;
 
@@ -24,6 +24,3 @@ $greyShadow-color: #f0f2fa;
 $purple-color: #4a455c;
 $greyMillion-color: #999999;
 // #FFC700
-// #666666
-// #FFC700
-// #263E66
